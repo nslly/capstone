@@ -25,6 +25,7 @@
                 </div>
 
                 <div class="text-center lg:text-left">
+
                     <a
                         class="block visible py-4 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white bg-blue-500 rounded-lg cursor-pointer sm:mr-3 sm:mb-0 sm:inline-block hover:bg-blue-600  focus:outline-none transition duration-150 ease-in-out"
                         >Get Started</a
@@ -98,22 +99,15 @@
     </section>
 
 
-        <!-- Parallax Background -->
-    <section
-        class=" mt-8 flex flex-col w-full h-[120px] bg-cover bg-fixed bg-center justify-center items-center"
-        style="
-            background-image: url({{ asset('images/bg.jpg') }});
-        ">
-    </section>
 
     
-
+{{-- 
     <div class="">
         <img src="{{ asset('images/wave.png') }}" alt="Wave image" class="w-full">
-    </div>
+    </div> --}}
 
 
-    <section class="mt-16 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-5">
+    <section class="mt-16 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-5 relative" style="z-index: 1">
         <div>
             <h1 class="text-3xl text-center font-bold tracking-wide">
                 Services
@@ -126,13 +120,13 @@
         </div>
         <div class="container mx-auto">
             <div>
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 lg:py-20" style="cursor: auto;">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 mt-12 md:mt-8 lg:py-12" style="cursor: auto;">
                             
-                    <div class="p-6 shadow-lg rounded-xl">
+                    <div class="p-6 shadow-lg rounded-xl bg-white">
                                 
                         <div class="my-6">       
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('images/boat.png') }}" alt="Hero Image" class="w-16">
+                                <img src="{{ asset('images/boat.png') }}" alt="Services Image" class="w-16">
                             </div>
                         </div>
                                 
@@ -145,11 +139,11 @@
                         </p>
                                 
                     </div>
-                    <div class="p-6 shadow-lg rounded-xl">
+                    <div class="p-6 shadow-lg rounded-xl bg-white">
                                 
                         <div class="my-6">       
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('images/food-tray.png') }}" alt="Hero Image" class="w-16">
+                                <img src="{{ asset('images/food-tray.png') }}" alt="Services Image" class="w-16">
                             </div>
                         </div>
                                 
@@ -162,11 +156,11 @@
                         </p>
                                 
                     </div>
-                    <div class="p-6 shadow-lg rounded-xl">
+                    <div class="p-6 shadow-lg rounded-xl bg-white">
                                 
                         <div class="my-6">       
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('images/soda.png') }}" alt="Hero Image" class="w-16">
+                                <img src="{{ asset('images/soda.png') }}" alt="Services Image" class="w-16">
                             </div>
                         </div>
                                 
@@ -179,11 +173,11 @@
                         </p>
                                 
                     </div>
-                    <div class="p-6 shadow-lg rounded-xl">
+                    <div class="p-6 shadow-lg rounded-xl bg-white">
                                 
                         <div class="my-6">       
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('images/beach-hut.png') }}" alt="Hero Image" class="w-16">
+                                <img src="{{ asset('images/beach-hut.png') }}" alt="Services Image" class="w-16">
                             </div>
                         </div>
                                 
@@ -196,11 +190,11 @@
                         </p>
                                 
                     </div>
-                    <div class="p-6 shadow-lg rounded-xl">
+                    <div class="p-6 shadow-lg rounded-xl bg-white">
                                 
                         <div class="my-6">       
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('images/kayak.png') }}" alt="Hero Image" class="w-16">
+                                <img src="{{ asset('images/kayak.png') }}" alt="Services Image" class="w-16">
                             </div>
                         </div>
                                 
@@ -216,8 +210,160 @@
                 </div>
             </div>
         </div>
+
+        <div>
+            <img src="{{ asset('images/design.png') }}" alt="Design Image" class="w-9/12 absolute top-0 hidden lg:block" style="right:-8rem; z-index: -1">
+        </div>
     </section>
 
+
+    <section class="mt-16 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-5">
+        <div>
+            <h1 class="text-3xl text-center font-bold tracking-wide">
+                About us
+                <hr class="mx-auto w-36 h-1 mt-1 bg-orange-600 rounded border-0  ">
+            </h1>
+        </div>
+
+        <div class="flex flex-wrap items-center mt-4 md:mt-8">
+            
+            <!-- Column-1 -->
+
+            <div class="px-3 mb-12 w-full lg:mb-0 lg:w-3/5 mt-6">
+                <!-- Illustrations Container -->
+                <div class="flex justify-center md:justify-left items-center mx-auto">
+                    <img src="{{ asset('images/about-us.png') }}" alt="About Image" class="w-4/5">
+                </div>
+            </div>
+
+            <!-- Column-2 -->
+            <div class="px-3 w-full lg:w-2/5 ">
+                <div
+                    class="mx-auto mb-8 max-w-full text-center lg:mx-0 lg:max-w-md lg:text-center sec-font">
+                    <h4 class="mb-4 text-3xl font-bold text-left tracking-wide">
+                        We select unforgettable experience for you all
+                    </h4>
+                    <p
+                        class="visible mt-3 mb-0 text-sm leading-relaxed text-left text-slate-400">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias beatae voluptatibus ut, amet harum, similique, recusandae omnis sequi alias obcaecati vero! Voluptatum ex consectetur perferendis, pariatur quisquam sit corrupti exercitationem voluptate inventore atque consequatur quod dolores repellat dolorem a quis vel dolorum suscipit cum quasi id minus harum. Recusandae tenetur velit eius ad incidunt quibusdam.
+                    </p>
+                </div>
+                <div class="text-left mt-8 drop-shadow-lg">
+                    <a
+                        class=" visible py-3 px-6 mb-4 text-xs font-semibold tracking-wide leading-none text-white bg-blue-500 rounded-3xl cursor-pointer  hover:bg-blue-600  focus:outline-none transition duration-300 ease-in-out"
+                    >READ MORE...</a>
+                </div>
+
+            </div>
+
+            
+            
+        </div>
+
+    </section>
+
+
+    
+    <section class=" flex flex-col w-full bg-cover bg-fixed bg-center justify-center items-center bg-orange-200">
+        <div x-data="{ 
+            billingType: 'Day', 
+            basicPrice: '700',
+            premiumPrice: '29',
+            proPrice: '39'
+        }" class="my-24 p-16 first-letter:opacity-100 bg-zinc-50 pb-12 rounded-2xl">
+            <div class="w-full bg-blue-500 pt-16 pb-24 text-center opacity-100">
+                <h4 class="text-2xl text-gray-100">Choose the right plan for you</h4>
+                <p class="text-sm text-gray-100 mt-2">Pricing built for businesses of all sizes. Choose package that suits your needs.</p>
+                {{-- <div class="flex items-center justify-center mt-8">
+                    <button @click="
+                            billingType = 'Day',
+                            basicPrice = '700',
+                            premiumPrice = '29',
+                            proPrice = '39'
+                        " class="text-gray-800 px-4 py-2 rounded-tl-lg rounded-bl-lg bg-gray-200" :class=" billingType === 'month' ? 'bg-blue-300' : 'bg-gray-200' " title="Choose Monthly billing">
+                        Monthly billing
+                    </button>
+                    <button @click="
+                            billingType = 'year',
+                            basicPrice = '205',
+                            premiumPrice = '313',
+                            proPrice = '421'
+                        " class="text-gray-800 px-4 py-2 rounded-tr-lg rounded-br-lg bg-gray-200" :class=" billingType === 'year' ? 'bg-blue-300' : 'bg-gray-200' " title="Choose Annual billing">
+                        Annual billing
+                    </button>
+                </div> --}}
+            </div>
+            <div class="w-full 2xl:w-3/4 flex items-center justify-center px-8 6 2xl:px-0 mx-auto -mt-8 opacity-100">
+                <div class="w-full grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    @foreach ($packages as $package)
+                        @if ($package->id <= 3)
+                        <div class="bg-white shadow-2xl rounded-lg px-12 py-4">
+                            <p class="text-xl text-center font-bold text-blue-500">{{ $package->name }}</p>
+                            <p class="text-center p-8">
+                                <span class="text-4xl font-bold text-gray-700">
+                                    ₱{{ $package->price }}
+                                </span>
+                                <span class="text-xs uppercase  text-gray-500">
+                                    / Day
+                                </span>
+                            </p>
+
+                            <ul class="border-t flex flex-col justify-center border-gray-300 py-8 space-y-6">
+                                <li class="flex items-center space-x-2 px-8">
+                                    <span class="bg-blue-500 rounded-full p-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-600 capitalize">{{ $package->count_of_person }} Person</span>
+                                </li>
+                                <?php 
+                                    $inclusions = explode(", ", $package->inclusions) 
+                                ?>
+                                @foreach ($inclusions as $inclusion)
+                                    @if ($inclusion > $inclusions[2])
+                                        <li class="flex items-center  space-x-2 px-8">
+                                            <span class="bg-blue-500 rounded-full p-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="text-gray-600 capitalize ">{{ $inclusion }}</span>
+                                        </li>
+                                    @endif
+                                @endforeach
+
+                                <hr>
+                                <div class="mt-6 flex align-center justify-center">
+                                    <a href="{{ route('package.show', $package->id) }}" class="text-gray-400 font-bold text-sm uppercase hover:text-gray-500">See More...</a>
+                                </div>
+                                {{-- <li class="flex items-center space-x-2 px-8">
+                                    <span class="bg-gray-300 rounded-full p-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="text-gray-400 capitalize">API Access</span>
+                                </li> --}}
+                                
+                            </ul>
+                            <div class="flex items-center justify-center my-6">
+                                <a href="#" class="bg-blue-500 hover:bg-blue-600 px-8 py-2 text-sm text-gray-200 uppercase rounded-3xl font-bold transition duration-150" title="Purchase">Purchase</a>
+                            </div>
+                        </div>
+                        @endif
+                    @endforeach    
+                </div>
+            </div>
+            <div class="text-center mt-12 drop-shadow-lg">
+                <a
+                    href="{{ route('package.index') }}"
+                    class=" visible py-3 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white bg-blue-500 rounded-lg cursor-pointer  hover:bg-blue-600  focus:outline-none transition duration-300 ease-in-out"
+                    >See More</a>
+            </div>
+        </div>
+    </section>
+    
 
     <section class="space-y-8">
         <h1 class="text-4xl text-center my-20">Reviews</h1>
@@ -339,22 +485,22 @@
                     <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
                         <li class="flex space-x-2">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <span class="font-light leading-tight">Dynamic reports and dashboards</span>
                         </li>
                         <li class="flex space-x-2">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <span class="font-light leading-tight">Templates for everyone</span>
                         </li>
                         <li class="flex space-x-2">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <span class="font-light leading-tight">Development workflow</span>
                         </li>
                         <li class="flex space-x-2">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             <span class="font-light leading-tight">Limitless business automation</span>
                         </li>
                     </ul>
@@ -370,7 +516,7 @@
                         <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                             <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-                            <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                            <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-500 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
                             </div>
                         </div>
                         <h2 id="accordion-flush-heading-2">
@@ -382,7 +528,7 @@
                         <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
                             <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-500 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
                             </div>
                         </div>
                         <h2 id="accordion-flush-heading-3">
@@ -397,8 +543,8 @@
                             <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
                             <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
                             <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                                <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                                <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                                <li><a href="https://flowbite.com/pro/" class="text-blue-500 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                                <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-500 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
                             </ul>
                             </div>
                         </div>

@@ -1,1 +1,0 @@
-<h1 class="text-red-500">FAILED THE TRANSACTION</h1>

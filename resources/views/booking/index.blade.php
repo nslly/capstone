@@ -44,6 +44,23 @@
                                 @endif
 							</div>
 
+
+                            <div class="mb-4">
+								<label class="block mb-2 text-sm font-bold text-gray-700" for="contact_num">
+									Package available
+								</label>
+								<select name="package" id="package" class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
+									@foreach ($packages as $package)
+										
+											<option value="{{ $package->name }}">{{ $package->name }}</option>
+										
+										@if ($errors->has('contact_num'))
+											<p class="text-red-500">{{ $errors->first('package') }}</p>
+										@endif
+									@endforeach
+								</select>
+							</div>
+
                             <div class="mb-4">
 								<label class="block mb-2 text-sm font-bold text-gray-700" for="number">
 									Number Of Person
@@ -65,19 +82,23 @@
 									<label class="block mb-2 text-sm font-bold text-gray-700" for="services">
 										Services Available 
                                     </label>
-                                    @forelse ($services as $service)
-                                        <div class="block md:mb-2">
-                                            <input
-                                            type="checkbox"
-                                            class="appearance-none indeterminate:bg-gray-300 services"
-                                            name="customer_services_avail[]"
-                                            value="{{ $service->service_name }}"
-                                            />
-                                            <label for="#" class="md:ml-1 text-sm text-gray-700">{{  $service->service_name }}</label>
-                                        </div>
-                                    @empty
-                                        <p>No services as of now.</p>
-                                    @endforelse	
+									<div class="my-4 space-y-4 md:my-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-5">
+										@forelse ($services as $service)
+											<div class="block md:mb-2">
+												<input
+												type="checkbox"
+												class="appearance-none indeterminate:bg-gray-300 services"
+												name="customer_services_avail[]"
+												value="{{ $service->service_name }}"
+												/>
+												<label class="md:ml-1 text-sm text-gray-700">{{  $service->service_name }}</label>
+												<p class="text-sm text-orange-600">( ₱{{ $service->price }} / head )</p>
+											</div>
+										@empty
+											<p>No services as of now.</p>
+										@endforelse	
+									</div>
+                                    
 								</div>
                                 @if ($errors->has('customer_services_avail'))
                                     <p class="text-red-500">{{ $errors->first('customer_services_avail') }}</p>

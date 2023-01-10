@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
-
-use App\Models\Booking;
-use App\Models\Service;
 use App\Models\Package;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +15,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-
-        $services = Service::all();
         $packages = Package::all();
-
-        return view('booking.index', [
-            'services'  => $services,
-            'packages'  => $packages
+        return view('package.index', [
+            'packages' => $packages
         ]);
     }
 
@@ -35,7 +28,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -46,24 +39,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'customer_email'            => 'required',
-            'customer_services_avail'   => 'required|array|min:1',
-            'customer_avail'            => 'required|integer',
-            'res_date'                  => 'required', 
-            'contact_num'               => 'required|string|min:11|max:11',
-
-        ]); 
-
-        Booking::create([
-            'customer_email'            =>  $request->input('customer_email'),
-            'customer_services_avail'   =>  implode(',', $request->input('customer_services_avail')),
-            'customer_avail'            =>  $request->input('customer_avail'),
-            'res_date'                  =>  $request->input('res_date'),
-            'contact_num'               =>  $request->input('contact_num'),
-        ]);
-
-        return redirect(route('dashboard'));
+        //
     }
 
     /**
@@ -74,7 +50,13 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $package = Package::find($id);
+        $services = Service::all();
+
+        return view('package.show', [
+            'package'       => $package,
+            'services'      => $services
+        ]);
     }
 
     /**

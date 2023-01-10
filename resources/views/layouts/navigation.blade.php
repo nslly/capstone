@@ -22,6 +22,16 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('Contact') }}
                     </x-nav-link>
+                </div>  
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('package.index')" :active="request()->routeIs('package.index')">
+                        {{ __('Package') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('about_us')" :active="request()->routeIs('about_us')">
+                        {{ __('About us') }}
+                    </x-nav-link>
                 </div>
                 
                 {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
