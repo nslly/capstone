@@ -7,6 +7,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{ asset('images/laque-logo.png') }}">
 
+        <link type="text/css" rel="stylesheet" href="{{ url('css/lightslider.css') }}" />                  
+        
+
+
         <title>{{ config('app.name', 'Laque Beach') }}</title>
 
         <!-- Fonts -->
@@ -17,7 +21,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 
         <style>
             html {
@@ -33,8 +37,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+
+
     </head>
-    <body class="overflow-x-hidden">
+    <body class="overflow-x-hidden scroll-smooth">
         <div class="min-h-screen bg-zinc-50">
 
             @include('layouts.navigation')
@@ -53,7 +61,32 @@
                 {{ $slot }}
             </main>
 
-            @include('layouts.footer')
+            @include('layouts.footer')    
         </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ asset('js/Jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/lightslider.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+        <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+        <script>
+
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('cf216db7b6d3da7825cb', {
+            cluster: 'ap1'
+            });
+
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('book-register', function(data) {
+            alert(JSON.stringify(data));
+            });
+        </script>
+
     </body>
+
+    
 </html>

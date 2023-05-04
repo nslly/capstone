@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="{{ asset('images/laque-logo.png') }}">
 
         <title>{{ config('app.name', 'Laque Beach') }}</title>
+    
 
         <!-- Fonts -->
         <!-- Gogole Fonts -->
@@ -16,7 +17,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 
         <style>
             html {
@@ -30,10 +31,12 @@
             
         </style>
 
+
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="overflow-x-hidden scroll-smooth">
         <div class="min-h-screen bg-zinc-50">
 
             @include('layouts.navigation')
@@ -54,5 +57,12 @@
 
             @include('layouts.footer')
         </div>
+
+        
+    <script type="text/javascript" src="{{ asset('js/Jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/lightslider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
     </body>
+
 </html>

@@ -18,16 +18,16 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: { 
-              danger: colors.rose,
-              primary: colors.cyan,
-              success: colors.teal,
-              warning: colors.yellow,
-          }, 
+                danger: colors.rose,
+                primary: colors.cyan,
+                success: colors.teal,
+                warning: colors.yellow,
+            }, 
         },
     },
 
     plugins: [
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/typography')
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
     ],
 };

@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('billings', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
+            $table->string('bill_img_path');
             $table->timestamps();
         });
     }

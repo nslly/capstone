@@ -27,7 +27,7 @@
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
 
-                <div class="flex flex-col md:flex-row">
+                <div class="flex flex-col md:flex-row space-x-2">
 
                     <!-- Password -->
                     <div class="mt-4">

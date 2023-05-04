@@ -14,6 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -50,6 +51,6 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 
     public function canAccessFilament(): bool
     {
-        return str_ends_with($this->email, '@admin.com');
+        return str_ends_with($this->email,'@admin.com');
     }
 }

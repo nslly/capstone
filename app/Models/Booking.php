@@ -9,7 +9,18 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_email', 'customer_services_avail', 'customer_avail', 'res_date', 'contact_num', 'status_of_book'];
+    protected $fillable = [
+        'customer_email', 
+        'customer_avail', 
+        'res_date', 
+        'contact_num', 
+        'status_of_book',
+        'tour_guide',
+        'package',
+        'avail_price',
+        'added_services',
+        'email_sent'
+    ];
 
 
 

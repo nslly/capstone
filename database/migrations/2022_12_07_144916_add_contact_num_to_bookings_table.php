@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('bookings', function (Blueprint $table) {
-            $table->string('contact_num')->nullable()->after('customer_services_avail');
+            $table->string('contact_num')->nullable()->after('customer_email');
         });
     }
 

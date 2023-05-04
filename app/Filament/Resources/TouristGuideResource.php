@@ -17,7 +17,10 @@ class TouristGuideResource extends Resource
 {
     protected static ?string $model = TouristGuide::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $navigationGroup = 'Proposal';
+
 
     public static function form(Form $form): Form
     {
@@ -46,10 +49,15 @@ class TouristGuideResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('contact_num'),
-                Tables\Columns\TextColumn::make('stars_rated'),
+                Tables\Columns\TextColumn::make('stars_rated')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('image_path'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
@@ -61,6 +69,7 @@ class TouristGuideResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

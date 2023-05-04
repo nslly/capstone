@@ -146,17 +146,17 @@ class RolesAndPermissionsSeeder extends Seeder
         //     'remember_token' => Str::random(10),
         // ])->assignRole($developerRole);
 
-        for ($i=1; $i < 20; $i++) {
-            User::create([
-                'name'              => 'Test '.$i,
-                'is_admin'          => 0,
-                'email'             => 'test'.$i.'@test.com',
-                'address'           => 'address '.$i,
-                'contact_num'       => $i * 100,
-                'email_verified_at' => now(),
-                'password'          => Hash::make('password'), // password
-                'remember_token'    => Str::random(10),
-            ])->assignRole($userRole);
-        }
+        // for ($i=1; $i < 20; $i++) {
+        //     User::create([
+        //         'name'              => 'Test '.$i,
+        //         'is_admin'          => 0,
+        //         'email'             => 'test'.$i.'@test.com',
+        //         'address'           => 'address '.$i,
+        //         'contact_num'       => $i * 100,
+        //         'email_verified_at' => now(),
+        //         'password'          => Hash::make('password'), // password
+        //         'remember_token'    => Str::random(10),
+        //     ])->assignRole($userRole);
+        // }
     }
 }

@@ -16,11 +16,12 @@ use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BookingResource\RelationManagers;
 
+
 class BookingResource extends Resource
 {
     protected static ?string $model = Booking::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+    protected static ?string $navigationIcon = 'heroicon-o-calendar';
 
     protected static ?string $navigationGroup = 'Transaction';
 
@@ -32,9 +33,14 @@ class BookingResource extends Resource
                     TextInput::make('customer_email')->required(),
                     Forms\Components\Toggle::make('status_of_book')
                         ->required(),
+                    Forms\Components\Toggle::make('email_sent')
+                        ->required(),
                     TextInput::make('res_date')->required(),
                     TextInput::make('contact_num')->required(),
-                    TextInput::make('customer_services_avail')->required(),
+                    TextInput::make('package')->required(),
+                    TextInput::make('tour_guide')->required(),
+                    TextInput::make('avail_price')->required(),
+                    TextInput::make('added_services')->required(),
                     TextInput::make('customer_avail')->type('number')->required(),
                 ])
             ]);
@@ -42,6 +48,7 @@ class BookingResource extends Resource
 
     public static function table(Table $table): Table
     {
+
         return $table
             ->columns([
                 TextColumn::make('id')->sortable(),
@@ -50,15 +57,24 @@ class BookingResource extends Resource
                     ->searchable(),
                 Tables\Columns\IconColumn::make('status_of_book')
                     ->boolean(),
-                TextColumn::make('customer_services_avail')->sortable(),
+                Tables\Columns\IconColumn::make('email_sent')
+                    ->boolean(),
                 TextColumn::make('customer_avail')->sortable(),
                 TextColumn::make('contact_num'),
+                TextColumn::make('tour_guide')->sortable(),
+                TextColumn::make('package')->sortable(),
+                TextColumn::make('avail_price')->sortable(),
+                TextColumn::make('added_services')->sortable(),
                 TextColumn::make('res_date')->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime('d-M-Y')
+                    ->dateTime('Y-m-d H:i:s')
                     ->sortable()
                     ->searchable(),
-            ])
+                TextColumn::make('updated_at')
+                    ->dateTime('Y-m-d H:i:s')
+                    ->sortable()
+                    ->searchable(),
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Billing extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'email',
+        'bill_img_path',
+        'email_sent'
+    ];
 }

@@ -13,55 +13,46 @@
                                 <span class="text-4xl font-bold text-gray-700">
                                     ₱{{ $package->price }}
                                 </span>
-                                <span class="text-xs uppercase  text-gray-500">
-                                    / Day
-                                </span>
                             </p>
-
+                            
                             <ul class="border-t flex flex-col justify-center border-gray-300 py-8 space-y-6">
                                 <li class="flex items-center space-x-2 px-8">
-                                    <span class="bg-blue-500 rounded-full p-1">
+                                    <span class="bg-orange-600 rounded-full p-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                         </svg>
                                     </span>
-                                    <span class="text-gray-600 capitalize">{{ $package->count_of_person }} Person</span>
+                                    <span class="ml-3 text-gray-600 capitalize">{{ $package->count_of_person }} Person</span>
                                 </li>
                                 <?php 
                                     $inclusions = explode(", ", $package->inclusions) 
                                 ?>
                                 @foreach ($inclusions as $inclusion)
-                                    {{-- @if ($inclusion < $inclusions[2]) --}}
-                                        <li class="flex items-center  space-x-2 px-8">
-                                            <span class="bg-blue-500 rounded-full p-1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-600 capitalize ">{{ $inclusion }}</span>
-                                        </li>
-                                    {{-- @endif --}}
+                                    <li class="flex items-center  space-x-2 px-8">
+                                        <span class="bg-orange-600 rounded-full p-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="text-gray-600 capitalize ml-3">{{ $inclusion }}</span>
+                                    </li>
                                 @endforeach
-
                                 <hr>
                                 <div class="mt-6 flex align-center justify-center">
-                                    <a href="{{ route('package.show', $package->id) }}" class="text-gray-400 font-bold text-sm uppercase hover:text-gray-500">ADD SERVICE</a>
+                                    <a href="{{ route('package.add_service', ['id' => $package->id]) }}" class="text-gray-400 font-bold text-sm uppercase hover:text-gray-500">ADD SERVICE</a>
                                 </div>
-                                {{-- <li class="flex items-center space-x-2 px-8">
-                                    <span class="bg-gray-300 rounded-full p-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                    <span class="text-gray-400 capitalize">API Access</span>
-                                </li> --}}
                                 
                             </ul>
                             <div class="flex items-center justify-center my-6">
-                                <a href="#" class="bg-blue-500 hover:bg-blue-600 px-8 py-2 text-sm text-gray-200 uppercase rounded-3xl font-bold transition duration-150" title="Purchase">Purchase</a>
+                                <a href="{{ route('package.show', $package->id) }}" class="bg-blue-500 hover:bg-blue-600 px-8 py-2 text-sm text-gray-200 uppercase rounded-3xl font-bold transition duration-150" title="Purchase">Purchase</a>
                             </div>
                         </div>
                     @endforeach    
+                </div>
+            </div>
+            <div class="mx-auto flex justify-center">
+                <div class="mt-6">
+                    {{ $packages->links('pagination::tailwind') }}
                 </div>
             </div>
         </div>

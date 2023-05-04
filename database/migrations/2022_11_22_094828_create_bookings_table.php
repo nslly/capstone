@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('customer_email');
-            $table->string('customer_services_avail');
             $table->integer('customer_avail');
             $table->boolean('status_of_book')->default(0);
             $table->timestamps();
