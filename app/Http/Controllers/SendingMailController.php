@@ -12,25 +12,22 @@ class SendingMailController extends Controller
 
 
         $bookings = Booking::all();
+        $book_lists = Booking::where('email_sent', 0);
+        $bookings_list = [];
 
 
-        foreach($bookings as $booking) {   
-                if($booking['status_of_book'] == 1) {     
-                    if($booking['email_sent'] == 0)  {
-                        Mail::to($booking['customer_email'])->send(new ConfirmReservation($booking));
-                    } else {
-                        return "Email Notification are already sent.";
-                    }         
-                } else {
-                    if($booking['email_sent'] == 0)  {
-                        Mail::to($booking['customer_email'])->send(new ConfirmReservation($booking));
-                    } else {
-                        return "Email Notification are already sent.";
-                    }    
-    
-                }
-            
+        foreach($bookings as $booking) {  
+            $bookings_list = $book_lists;
+            dd($bookings_list);
+
+            // if($booking['status_of_book'] == 1) {    
+            //     if($booking['email_sent'] == 0) {
+            //         Mail::to($booking['customer_email'])->send(new ConfirmReservation($booking)); 
+            //     }    
+                
+            // } else {
+            //     return "The Email was not accepted yet.";
+            // }
         }
-
     }
 }
